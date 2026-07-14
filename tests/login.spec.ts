@@ -27,6 +27,7 @@ test.describe('Login screen', () => {
   });
 
   for (const user of allUsers) {
+    console.log('Running test for:', user.username);
     test(`${user.role} user login outcome`, async ({ page }) => {
       const loginPage = new LoginPage(page);
       await loginPage.loginAs(user);
